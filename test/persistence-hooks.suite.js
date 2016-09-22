@@ -1355,7 +1355,7 @@ module.exports = function(dataSource, should, connectorCapabilities) {
           if (err) return done(err);
 
           ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
-            data: {name: 'changed'},
+            data: { name: 'changed' },
             isNewInstance: false,
           }));
 
@@ -2014,7 +2014,7 @@ module.exports = function(dataSource, should, connectorCapabilities) {
             if (dataSource.connector.updateOrCreate) {
               ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
                 data: { id: 'new-id', name: 'a name' },
-                isNewInstance: true
+                isNewInstance: true,
               }));
             } else {
               ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
