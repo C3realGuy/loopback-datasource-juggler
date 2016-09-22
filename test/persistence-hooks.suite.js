@@ -2011,20 +2011,13 @@ module.exports = function(dataSource, should, connectorCapabilities) {
           function(err, instance) {
             if (err) return done(err);
 
-            if (dataSource.connector.updateOrCreate) {
-              ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
-                data: { id: 'new-id', name: 'a name' },
-                isNewInstance: true,
-              }));
-            } else {
-              ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
-                data: {
-                  id: 'new-id',
-                  name: 'a name',
-                },
-                isNewInstance: true,
-              }));
-            }
+            ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
+              data: {
+                id: 'new-id',
+                name: 'a name',
+              },
+              isNewInstance: true,
+            }));
             done();
           });
       });
