@@ -2014,6 +2014,7 @@ module.exports = function(dataSource, should, connectorCapabilities) {
             if (dataSource.connector.updateOrCreate) {
               ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
                 data: { id: 'new-id', name: 'a name' },
+                isNewInstance: true
               }));
             } else {
               ctxRecorder.records.should.eql(aCtxForModel(TestModel, {
